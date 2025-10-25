@@ -1,0 +1,48 @@
+.card{  
+    transform: translateX(-20%);
+}
+
+.bio-container{  
+    transform: translateX(20%);
+
+        max-width: 130px; 
+        max-height: 150px; 
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+        font-size: clamp(9px, 6vw, 15px); 
+}
+
+
+.superlike{
+    object-fit: cover;
+    position: relative;       
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.like{
+    
+    width: 70px;                    
+    
+}
+
+.dislike{
+    width: 70px;                  
+    object-fit: cover;
+    text-align: center;
+}
+
+
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;             
+    gap: 10px;  
+    align-items: center; 
+                
+  }
+  
+  

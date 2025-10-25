@@ -1,0 +1,7 @@
+<h1 class="title">Catch!<br></h1>
+<div *ngIf="show" class="background" (click)="back()"></div> 
+<div *ngIf="show" class="modal">
+        <app-card [gatti]="gatti" (profiliTerminati)="notShow($event)"></app-card>
+        <button *ngIf="rematch" class='button-back' (click)="back()">Torna Indietro</button>
+</div>
+<button class="search-button" *ngIf="!show" (click)="Show()">Cerca nuovi aMici!</button>

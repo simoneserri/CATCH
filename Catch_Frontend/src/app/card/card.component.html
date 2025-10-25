@@ -1,0 +1,11 @@
+<div class="image-container">
+    <div class="card"> 
+        <app-carousel *ngIf="gatti[selected]!==undefined" [gatto]="gatti[selected]" (voto)="votazione($event)"></app-carousel>
+    </div>
+    <h2 *ngIf="gatti[selected]==undefined">Profili esauriti</h2>
+<div *ngIf="gatti[selected]!==undefined" class="bio-container">
+<span class="name"><h2>{{gatti[selected].nome}}</h2></span>
+<br>
+<span class="bio">"{{gatti[selected].bio}}"</span>
+</div>
+</div>

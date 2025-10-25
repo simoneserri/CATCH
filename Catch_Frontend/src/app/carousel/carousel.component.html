@@ -1,0 +1,24 @@
+<div>
+  <div class="image-container" *ngIf="gatto?.foto">
+    <img class="cat-image" [src]="'data:image/jpeg;base64,' + gatto.foto[currentIndex]"  title="Foto {{currentIndex+1}}" />
+    <div class="click-zone left-zone" (click)="prevImage()"></div>
+    <div class="click-zone right-zone" (click)="nextImage()"></div>
+    <div class="bottom-overlay-zone">
+      <button class="vote-button" (click)="vota('like')"><img src="like.svg" title='Like' width="25"
+          height="25"></button>
+      <button class="vote-button" (click)="vota('dislike')"><img src="dislike.svg" title='Dislike' width="25"
+          height="25"></button>
+      <button class="vote-button" (click)="vota('superlike')"><img src="superlike.svg" title='Superlike' width="25"
+          height="25"></button>
+    </div>
+  </div>
+  <div class="carousel-indicator">
+    <ul>
+      <li *ngFor="let foto of gatto.foto;let i=index">
+        <a title="Foto {{i+1}}"
+          [ngClass]="i == currentIndex ? 'carousel-navigation-button-selected' : 'carousel-navigation-button'"
+          (click)="changeCurrentIndex(i)"></a>
+      </li>
+    </ul>
+  </div>
+</div>
