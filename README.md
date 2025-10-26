@@ -1,5 +1,5 @@
 # CATCH
-Catch is the app your cat needs to find the love of his life. 
+Catch is the best WebApp if you wanna find nice cats.
 
 1) Download the project on your machine:
 Open a shell and type: git clone https://github.com/simoneserri/Catch
