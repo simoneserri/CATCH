@@ -1,0 +1,61 @@
+<div class="newcatModal">
+  <div *ngIf="!thankYouPage">
+    <h2>Aggiungi un nuovo aMicio!</h2>
+    <h4>Inserisci fino a 3 foto</h4>
+
+    <div class="foto-container">
+
+      <div class="foto-wrapper" *ngIf="fotoCaricate[0]">
+        <img [src]="fotoCaricate[0]" alt="Anteprima foto 1" width="130" height="130">
+        <img src="remove.svg" class="remove-icon" (click)="rimuoviFoto(0)">
+      </div>
+      <div class="foto-wrapper" *ngIf="!fotoCaricate[0]">
+        <label class="upload-frame">
+          <span>
+            <img src="add.svg" title="Add" width="35" height="35">
+          </span>
+          <input class="add-button" type="file" accept="image/png, image/jpeg" required
+            (change)="onFileSelected($event)">
+        </label>
+      </div>
+      <ng-container *ngFor="let i of [1,2]">
+
+        <div class="foto-wrapper" *ngIf="fotoCaricate[i]">
+          <img [src]="fotoCaricate[i]" alt="Anteprima foto {{i+1}}" width="130" height="130">
+          <img src="remove.svg" class="remove-icon" (click)="rimuoviFoto(i)">
+        </div>
+
+        <div class="foto-wrapper" *ngIf="!fotoCaricate[i] && fotoCaricate[i-1]">
+          <label class="upload-frame">
+            <span>
+              <img src="add.svg" title="Add" width="35" height="35">
+            </span>
+            <input class="add-button" type="file" accept="image/png, image/jpeg" (change)="onFileSelected($event)">
+          </label>
+        </div>
+
+      </ng-container>
+    </div>
+
+
+    <hr color="black">
+    <div class="container">
+      <h4>Parlaci del tuo aMicio</h4>
+      <h5>Come si chiama?</h5>
+      <input type="text" [(ngModel)]="nomeGatto" name="nomeGatto" class='catname' size=10 placeholder="Nome.."
+        maxlength="13" required />
+      <h5>Parlaci un po di lei</h5>
+      <textarea type="text" [(ngModel)]="bioGatto" name="bioGatto" class='catbio'
+        placeholder="Breve bio.. (max 40 caratteri)" maxlength="40" required></Textarea>
+      <div class="submit-div" *ngIf="fotoCaricate[0]&&nomeGatto!==''&&bioGatto!==''">
+        <button class="submit-button" (click)="submitCat()">Invia!</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="ty-page" *ngIf="thankYouPage">
+    <h3 >{{this.thankYouPage}}</h3>
+    <button class="button-back" (click)="closeCatModal()">Indietro</button>
+  </div>
+
+</div>

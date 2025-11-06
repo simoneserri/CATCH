@@ -19,7 +19,7 @@ public class Foto {
 	private int index;
 
 	@ManyToOne
-	@JoinColumn(name = "ID", nullable = false)
+	@JoinColumn(name = "GATTO_ID", nullable = false)
 	private Gatto gatto;
 
 	@Lob

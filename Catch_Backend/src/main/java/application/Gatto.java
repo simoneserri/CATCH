@@ -1,5 +1,6 @@
 package application;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.*;
@@ -20,7 +21,7 @@ public class Gatto {
     @Column(nullable = false)
     private String bio;
 
-    @OneToMany(mappedBy = "gatto", cascade = CascadeType.ALL)
-    private List<Foto> fotoGallery;
+    @OneToMany(mappedBy = "gatto", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Foto> fotoGallery = new ArrayList<>();
 	
 }

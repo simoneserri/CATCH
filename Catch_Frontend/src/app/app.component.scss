@@ -1,17 +1,23 @@
 * {
     box-sizing: border-box;
-    overflow-x: hidden;
+    overflow: hidden;
   }
+
+  html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
 
 .page-wrapper {
     border-radius: 25px;
     width: 98vw;
-    height: 97vh;
-    max-width: 98vw;
-    max-height: 97vh;
-    overflow-x: hidden;
+    height: calc(100vh - 20px);
+    overflow: hidden;
     box-sizing: border-box;
     position: relative;
+    padding: 0; /* oppure un valore che non superi lo spazio disponibile */
+    border: none; /* oppure incluso nel calcolo */
   }
 
 #marco{

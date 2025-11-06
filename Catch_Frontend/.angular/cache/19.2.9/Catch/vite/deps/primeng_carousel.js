@@ -1,17 +1,17 @@
 import {
   Button,
   ButtonModule
-} from "./chunk-65P6GIJ2.js";
+} from "./chunk-2AAJUBHA.js";
 import {
   ChevronDownIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
   ChevronUpIcon
-} from "./chunk-TIXFWKH7.js";
+} from "./chunk-ZFKXSGKY.js";
 import {
   BaseComponent,
   BaseStyle
-} from "./chunk-R5P252DN.js";
+} from "./chunk-5CDSH26A.js";
 import {
   Footer,
   Header,
@@ -22,7 +22,7 @@ import {
   getAttribute,
   setAttribute,
   uuid
-} from "./chunk-GGZLKDJN.js";
+} from "./chunk-BY5LA5VM.js";
 import {
   CommonModule,
   NgClass,
@@ -30,10 +30,10 @@ import {
   NgIf,
   NgStyle,
   NgTemplateOutlet
-} from "./chunk-2TVCJPHE.js";
+} from "./chunk-B2WN3WFQ.js";
 import {
   isPlatformBrowser
-} from "./chunk-5RAF325X.js";
+} from "./chunk-KRABRR3C.js";
 import {
   ChangeDetectionStrategy,
   Component,
@@ -87,7 +87,8 @@ import {
   ɵɵtemplate,
   ɵɵtemplateRefExtractor,
   ɵɵviewQuery
-} from "./chunk-KUA6TBKJ.js";
+} from "./chunk-WVMZWLDY.js";
+import "./chunk-S35MAB2V.js";
 
 // node_modules/primeng/fesm2022/primeng-carousel.mjs
 var _c0 = ["item"];

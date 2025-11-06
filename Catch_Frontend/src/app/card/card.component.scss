@@ -1,16 +1,22 @@
 .card{  
-    transform: translateX(-20%);
+  width: 320px;
 }
 
-.bio-container{  
-    transform: translateX(20%);
+.warning{
+    text-align: center;
+}
 
-        max-width: 130px; 
-        max-height: 150px; 
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: normal;
-        font-size: clamp(9px, 6vw, 15px); 
+.bio-container {
+  width: 130px;               /* larghezza fissa */
+  height: 150px;              /* altezza fissa */
+  overflow: hidden;           /* nasconde il contenuto che sfora */
+  text-overflow: ellipsis;   /* aggiunge "..." se il testo è troppo lungo */
+  white-space: normal;       /* consente il ritorno a capo */
+  word-wrap: break-word;     /* spezza parole lunghe */
+  font-size: clamp(9px, 6vw, 15px);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
 }
 
 
@@ -34,14 +40,30 @@
     text-align: center;
 }
 
+ .rewatch-button{
+    background:none;
+    position:relative;
+    left:20%;
+    color:black;
+    border-color: black;
+    border-radius: 25px;
+    font-size: 20px;
+  }
+
+  .warning-skipped{
+    position:absolute;
+    top: 40%;
+    left: 25%;
+    font-size: 22px;
+  }
 
 .image-container {
-    display: flex;
-    flex-wrap: wrap;
-    text-align: center;
-    justify-content: center;             
-    gap: 10px;  
-    align-items: center; 
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px; /* spazio tra card e bio */
+  flex-wrap: nowrap; /* evita che vadano a capo */
                 
   }
   

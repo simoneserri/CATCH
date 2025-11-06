@@ -1,0 +1,110 @@
+.cat-modal{
+     background-color: yellow;
+     height: 550px;
+}
+
+    .add-button {
+    all: unset;
+    margin:"50px";
+   // display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    overflow: hidden;
+    display: none;
+    width: 32px;
+    height: 32px;
+    background: white;
+    color: black;
+    transition: transform 0.2s ease;
+
+  }
+
+  .button-back{
+    background:none;
+    color:black;
+    border-color: black;
+    border-radius: 25px;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .ty-page{
+    text-align: center;
+  }
+  
+  .container{
+    position:relative  
+  }
+
+  .submit-div{
+    position: absolute;
+    right: 100px;
+    bottom: 70px
+  }
+
+
+  .submit-button{
+    background:none;
+    color:black;
+    border-color: black;
+    border-radius: 25px;
+    font-size: 40px;
+  }
+
+  .foto-container {
+  height: 180px;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 16px;         
+    //width: 600px;      
+    position: relative;
+    padding: 12px;
+    box-sizing: border-box;
+}
+
+.foto-wrapper{
+     position: relative;
+}
+
+.catname {
+  size: "2";
+}
+
+.catbio {
+  resize: none;
+  width:"50px";
+}
+
+.remove-icon {
+position: absolute;
+  top: 6px;
+  right: 6px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  font-size: 14px;
+  cursor: url('/catCursor.png'), auto;
+  line-height: 22px;
+  text-align: center;
+  padding: 0;
+  box-shadow: 0 0 2px rgba(0,0,0,0.3);
+}
+
+.upload-frame {
+    width: 130px;
+    height: 130px;
+    border: 2px dashed black;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    cursor: url('/catCursor.png'), auto;
+    transition: border-color 0.3s;
+  }
+
+
+

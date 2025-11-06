@@ -3,7 +3,7 @@ package application;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
-import org.springframework.core.io.ClassPathResource;
+
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
@@ -18,6 +18,7 @@ import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -34,77 +35,54 @@ public class DataLoader implements org.springframework.boot.CommandLineRunner {
 	
 	@Autowired
     private GattoRepository gattoRepository;
-
-    @Override
+	 @Override
     public void run(String... args) throws Exception {
-    	salvaGatti();
-    	salvaFoto();
+		 if(gattoRepository.count()==0) {
+			fotoRepository.deleteAll(); 
+			caricaGatti();
+    		caricaFoto();
+		 }
+		 System.out.println("Dati caricati");
     }
     
     
     
-    private void salvaGatti() throws Exception {
-    	ObjectMapper mapper = new ObjectMapper();
-        InputStream is = new ClassPathResource("data/gatti.json").getInputStream();
-        List<Gatto> gatti = Arrays.asList(mapper.readValue(is, Gatto[].class));
-        gattoRepository.saveAll(gatti);		
-		
-    }
-    
-    
-    /*private void salvaFoto() throws Exception {
-    	String directoryPath = "src/main/resources/images";
+	 private void caricaGatti() throws Exception {
+		 ObjectMapper mapper = new ObjectMapper();
 
-    	ArrayList<String> fileNames = new ArrayList<String>();
+		    ClassPathResource resource = new ClassPathResource("data/gatti.json");
 
-    	
-        Path directory = Paths.get(directoryPath);
-        try (DirectoryStream<Path> stream = Files.newDirectoryStream(directory)) {
-            for (Path file : stream) {
-            	fileNames.add(file.getFileName().toString());
-            }
-        }
-        int id;
-        for (String fileName : fileNames) {
-            ClassPathResource imgFile = new ClassPathResource("images/" + fileName);
-            id=Integer.valueOf(fileName.split("_")[0]);
-            Optional<Gatto> optionalGatto = gattoRepository.findById(id);
-
-            if (optionalGatto.isPresent()) {
-            	Gatto gatto = optionalGatto.get();
-				Foto foto = new Foto();
-				foto.setFoto(imgFile.getInputStream().readAllBytes());
-				foto.setGatto(gatto);
-				fotoRepository.save(foto);
-			}
-            
-            else {
-                throw new RuntimeException("Gatto con ID " + id + " non trovato!");
-            }
+		    try (InputStream is = resource.getInputStream()) {
+		        List<Gatto> gatti = Arrays.asList(mapper.readValue(is, Gatto[].class));
+		        gattoRepository.saveAll(gatti);
+		        System.out.println(gatti.size() + " gatti caricati dal JSON nel database.");
+		    } catch (IOException e) {
+		        System.err.println("Errore nel caricamento di data/gatti.json: " + e.getMessage());
+		    }
 		}
 
-    	
-    }
-    */
-
-    private void salvaFoto() throws Exception {
-        PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-        Resource[] resources = resolver.getResources("classpath:/images/*");
-
-        for (Resource imgFile : resources) {
-            String fileName = imgFile.getFilename();
-            int id = Integer.parseInt(fileName.split("_")[0]);
-            Optional<Gatto> optionalGatto = gattoRepository.findById(id);
-
-            if (optionalGatto.isPresent()) {
-                Gatto gatto = optionalGatto.get();
-                Foto foto = new Foto();
-                foto.setFoto(imgFile.getInputStream().readAllBytes());
-                foto.setGatto(gatto);
-                fotoRepository.save(foto);
-            } else {
-                throw new RuntimeException("Gatto con ID " + id + " non trovato!");
-            }
-        }
-    }
+		
+    
+    
+    private void caricaFoto() throws Exception {
+    	        List<Gatto> gatti = gattoRepository.findAll();
+    	        PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
+    	        for (Gatto gatto : gatti) {
+    	            int id = gatto.getID();
+    	            String pattern = "classpath:/images/" + id + "_*.jpg";
+    	            Resource[] resources = resolver.getResources(pattern);
+    	            for (Resource resource : resources) {
+    	                try (InputStream is = resource.getInputStream()) {
+    	                    byte[] bytes = is.readAllBytes();
+    	                    Foto foto = new Foto();
+    	                    foto.setFoto(bytes);
+    	                    foto.setGatto(gatto);
+    	                    fotoRepository.save(foto);
+    	                    System.out.println("Foto salvata per gatto ID " + id + ": " + resource.getFilename());
+    	                } catch (IOException e) {
+    	                    System.err.println("Errore nel leggere l'immagine " + resource.getFilename() + ": " + e.getMessage());
+    	                }
+    	            }
+    	        }
+    	}
 }

@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./Catch_Backend
+      dockerfile: Dockerfile
+    container_name: catch-backend
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./Catch_Frontend
+      dockerfile: Dockerfile
+    container_name: catch-frontend
+    ports:
+      - "80:80"
+    restart: unless-stopped

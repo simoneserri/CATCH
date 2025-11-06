@@ -1,9 +1,7 @@
-application\Gatto.class
 application\CatchApplication.class
-application\GattoFotoDTO.class
 application\GattoRepository.class
-application\ProjectSecurityConfig.class
+application\Gatto.class
+application\GattoFotoDTO.class
 application\DataLoader.class
 application\Foto.class
 application\FotoRepository.class
-controllers\CatchController.class

@@ -23,34 +23,71 @@ img{
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* centra l'elemento */
+    transform: translate(-50%, -50%); 
     background-color: yellow;
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    z-index: 1001; /* sopra lo sfondo */
+    z-index: 1001; 
     width: 90vh;
     max-height: 90vl;
     overflow: auto;
   }
 
   .button-back{
-    position:fixed;
-    top: 80%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* centra l'elemento */
+    position:absolute;
+    left:38%;
+    background:none;
+    color:black;
+    border-color: black;
+    border-radius: 25px;
+    font-size: 20px;
   }
 
-  .search-button{
+  .reset-message{
+    background:none;
+    color:black;
+    border-color: black;
+    border-radius: 25px;
+    font-size: 22px;
+    text-align: center;
+ }
+
+ .reset-button{
     position:fixed;
-    top: 70%;
+    top: 85%;
     left: 35%;
     background:none;
     color:white;
     border-color: white;
     border-radius: 25px;
-    font-size: 40px;
+    font-size: 32px;
+ }
+
+  .search-button{
+    position:fixed;
+    top: 65%;
+    left: 35%;
+    background:none;
+    color:white;
+    border-color: white;
+    border-radius: 25px;
+    font-size: 32px;
   }
+
+  .newcat-button{
+    position:fixed;
+    top: 75%;
+    left: 32%;
+    background:none;
+    color:white;
+    border-color: white;
+    border-radius: 25px;
+    font-size: 32px;
+  }
+
+
+
   .title{
     font-size: 50px;
     color: white;

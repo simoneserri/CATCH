@@ -2,17 +2,17 @@ import { createRequire } from 'module';const require = createRequire(import.meta
 import {
   Button,
   ButtonModule
-} from "./chunk-IM7WIG7E.js";
+} from "./chunk-VZYEGTVQ.js";
 import {
   ChevronDownIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
   ChevronUpIcon
-} from "./chunk-QC7FBINQ.js";
+} from "./chunk-3KNTOQYR.js";
 import {
   BaseComponent,
   BaseStyle
-} from "./chunk-XK3N3N7S.js";
+} from "./chunk-BSOLJ33R.js";
 import {
   Footer,
   Header,
@@ -23,7 +23,7 @@ import {
   getAttribute,
   setAttribute,
   uuid
-} from "./chunk-PFYMGQGP.js";
+} from "./chunk-TLW4SAOU.js";
 import {
   CommonModule,
   NgClass,
@@ -31,10 +31,10 @@ import {
   NgIf,
   NgStyle,
   NgTemplateOutlet
-} from "./chunk-M4RTR2FL.js";
+} from "./chunk-6CPBTV3U.js";
 import {
   isPlatformBrowser
-} from "./chunk-P3TFBB5L.js";
+} from "./chunk-JAXOFING.js";
 import {
   ChangeDetectionStrategy,
   Component,
@@ -88,7 +88,8 @@ import {
   ɵɵtemplate,
   ɵɵtemplateRefExtractor,
   ɵɵviewQuery
-} from "./chunk-IJSJBVXJ.js";
+} from "./chunk-SLSZZLRJ.js";
+import "./chunk-AQYIT73X.js";
 import "./chunk-YHCV7DAQ.js";
 
 // node_modules/primeng/fesm2022/primeng-carousel.mjs

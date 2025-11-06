@@ -4,13 +4,14 @@ import {PasswordModule} from 'primeng/password';
 import {ButtonModule} from 'primeng/button';
 import { CommonModule } from '@angular/common';
 import { TagModule } from 'primeng/tag';
-import { FotoGatto, Gatto, GattoFotoDTO} from '../cat.service';
+import { GattoFotoDTO} from '../cat.service';
 import { Input } from '@angular/core';
 import { NgFor } from '@angular/common';
 import { SimpleChanges } from '@angular/core';
 import { Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { HostListener } from '@angular/core';
+
 
 @Component({
   selector: 'app-carousel',
@@ -25,6 +26,10 @@ export class CarouselComponent implements OnChanges{
 @Output() voto = new EventEmitter<string>();
 color:string="white";
 
+onImageError() {
+  console.warn('Immagine non caricata correttamente');
+}
+
 @HostListener('document:keydown.ArrowRight', ['$event'])
 handleRightKey(event: KeyboardEvent) {
   this.nextImage();
@@ -36,6 +41,8 @@ handleLeftKey(event: KeyboardEvent) {
 }
 
 vota(voto:string){
+  
+  console.log("emettiamo voto"+voto);
   this.voto.emit(voto);
 }
 
@@ -47,7 +54,7 @@ dislike(){
 
 }
 
-superlike(){
+skip(){
 }
 
 ngOnChanges(changes: SimpleChanges){
@@ -58,6 +65,8 @@ ngOnChanges(changes: SimpleChanges){
 changeCurrentIndex(index:number){
   this.currentIndex=index;
 }
+
+
   currentIndex = 0;
 
   nextImage() {

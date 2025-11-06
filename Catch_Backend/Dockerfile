@@ -1,9 +1,5 @@
 FROM eclipse-temurin:21-jre
-
 WORKDIR /app
-
-COPY /target/Catch-0.0.1-SNAPSHOT.jar app.jar
-
+COPY target/Catch.jar ./Catch.jar
 EXPOSE 8080
-
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "Catch.jar"]
