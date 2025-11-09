@@ -16,5 +16,5 @@ services:
       dockerfile: Dockerfile
     container_name: catch-frontend
     ports:
-      - "80:80"
+      - "3000:80"
     restart: unless-stopped

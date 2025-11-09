@@ -6,7 +6,7 @@
     <div class="foto-container">
 
       <div class="foto-wrapper" *ngIf="fotoCaricate[0]">
-        <img [src]="fotoCaricate[0]" alt="Anteprima foto 1" width="130" height="130">
+        <img class="foto-caricata" [src]="fotoCaricate[0]" alt="Anteprima foto 1" >
         <img src="remove.svg" class="remove-icon" (click)="rimuoviFoto(0)">
       </div>
       <div class="foto-wrapper" *ngIf="!fotoCaricate[0]">
@@ -21,7 +21,7 @@
       <ng-container *ngFor="let i of [1,2]">
 
         <div class="foto-wrapper" *ngIf="fotoCaricate[i]">
-          <img [src]="fotoCaricate[i]" alt="Anteprima foto {{i+1}}" width="130" height="130">
+          <img class="foto-caricata" [src]="fotoCaricate[i]" alt="Anteprima foto {{i+1}}">
           <img src="remove.svg" class="remove-icon" (click)="rimuoviFoto(i)">
         </div>
 

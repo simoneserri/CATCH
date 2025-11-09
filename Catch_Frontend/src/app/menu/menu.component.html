@@ -1,20 +1,23 @@
-<h1 class="title">Catch!<br></h1>
-<div *ngIf="toShowCarouselModal" class="background" (click)="closeCarouselModal()"></div> 
-<div *ngIf="toShowNewCatModal" class="background" (click)="closeNewCatModal()"></div> 
-<div *ngIf="toShowResetMessage" class="background" (click)="closeResetMessage()"></div> 
-<div *ngIf="toShowCarouselModal" class="modal">
-        <app-card [gatti]="this.gattiDaMostrare" (risultatoVoto)="riceviVoto($event)" (fineProfili)="fineDeiProfili()" ></app-card>        
-        <button *ngIf="fineProfili" class='button-back' (click)="closeCarouselModal()">Torna Indietro</button>        
-        <hr color="yellow">
+<div class="page-wrapper">
+        <h1 class="title">Catch!<br></h1>
+        
+        <div *ngIf="toShowCarouselModal" class="background" (click)="closeCarouselModal()"></div>
+        <div *ngIf="toShowNewCatModal" class="background" (click)="closeNewCatModal()"></div>
+        <div *ngIf="toShowResetMessage" class="background" (click)="closeResetMessage()"></div>
+        <div *ngIf="toShowCarouselModal" class="modal">
+                <app-card [gatti]="this.gattiDaMostrare" (risultatoVoto)="riceviVoto($event)"
+                        (fineProfili)="fineDeiProfili()"></app-card>
+                <button *ngIf="fineProfili" class='button-back' (click)="closeCarouselModal()">Torna Indietro</button>
+                <hr color="yellow">
+        </div>
+        <div>
+                <app-add-cat-modal class="newmodal" *ngIf="toShowNewCatModal"
+                        (chiudiModale)="closeNewCatModal()"></app-add-cat-modal>
+        </div>
+        <div *ngIf="toShowResetMessage" class="resetmodal">
+                <h2 class="reset-message">Preferenze resettate correttamente!</h2>
+        </div>
+        <button class="search-button" (click)="showCarouselModal()">Cerca nuovi aMici!</button>
+        <button class="newcat-button" (click)="showNewCatModal()">Registra un nuovo aMicio</button>
+        <button class="reset-button" (click)="showResetMessage()">Resetta preferenze</button>
 </div>
-<div>
-        <app-add-cat-modal class="modal" *ngIf="toShowNewCatModal" (chiudiModale)="closeNewCatModal()"></app-add-cat-modal>
-</div>
-<div *ngIf="toShowResetMessage" class="modal">
-        <h2 class="reset-message">Preferenze resettate correttamente!</h2>
-</div>
-<button class="search-button" (click)="showCarouselModal()">Cerca nuovi aMici!</button>
-<hr>
-<button class="newcat-button" (click)="showNewCatModal()" >Registra un nuovo aMicio</button>
-<hr>
-<button class="reset-button" (click)="showResetMessage()" >Resetta preferenze</button>

@@ -1,22 +1,50 @@
-.card{  
-  width: 320px;
-}
 
 .warning{
-    text-align: center;
+  font-size: clamp(12px, 6vw, 22px);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+
+.rewatch-button {
+  position: absolute;              
+  transform: translateX(-20%);
+  border-radius:clamp(9px, 6vw, 15px);
+  font-size:clamp(9px, 6vw, 15px);
+}
+
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  
+}
+
+
+.image-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px; 
+  flex-wrap: nowrap;    
+  display: block;
+  }
+  
+
+.bio-container {
+  
+  font-size: clamp(16px, 6vw, 24px);
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 .bio-container {
-  width: 130px;               /* larghezza fissa */
-  height: 150px;              /* altezza fissa */
-  overflow: hidden;           /* nasconde il contenuto che sfora */
-  text-overflow: ellipsis;   /* aggiunge "..." se il testo è troppo lungo */
-  white-space: normal;       /* consente il ritorno a capo */
-  word-wrap: break-word;     /* spezza parole lunghe */
-  font-size: clamp(9px, 6vw, 15px);
   display: flex;
-  flex-direction: column;
-  justify-content: start;
+  justify-content: center;
+  text-align: center;
 }
 
 
@@ -57,14 +85,11 @@
     font-size: 22px;
   }
 
-.image-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 20px; /* spazio tra card e bio */
-  flex-wrap: nowrap; /* evita che vadano a capo */
-                
+  .name{
+    position:absolute;
+    left: 40%;
+    top: 0%;
   }
-  
+
+
   

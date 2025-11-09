@@ -1,15 +1,30 @@
-<div class="image-container">
-    <div class="card"> 
-        <app-carousel *ngIf="this.gattoAttuale" [gatto]="this.gattoAttuale" (voto)="votazione($event)"></app-carousel>
-        <h2 class="warning" *ngIf="!this.gattoAttuale">Hai visitato tutti i profili</h2>
-        <h2 *ngIf="this.gatti.length==0" class='warning-skipped'>Non ci sono altri profili skippati</h2>
-        <button *ngIf="this.gatti.length!=0&&!this.gattoAttuale" class="rewatch-button" (click)="rivediProfili()">Rivedi profili skippati</button>
+<div class="wrapper">
+    <div *ngIf="this.gattoAttuale" class="name-container">
+        <span class="name">
+            <h2>{{this.gattoAttuale.nome}}</h2>
+        </span>
         <hr color="yellow">
+        <hr color="yellow">
+        <div class="image-container">
+            <div class="card">
+                <app-carousel [gatto]="this.gattoAttuale" (voto)="votazione($event)"></app-carousel>
+            </div>
+        </div>
+        <hr color="yellow">
+        <hr color="yellow">
+        <div class="bio-container">
+            <span class="bio">"{{this.gattoAttuale.bio}}"</span>
+        </div>
     </div>
-   
-<div *ngIf="this.gattoAttuale" class="bio-container">
-<span class="name"><h2>{{this.gattoAttuale!.nome}}</h2></span>
-<br>
-<span class="bio">"{{this.gattoAttuale!.bio}}"</span>
-</div>
+    <div *ngIf="!this.gattoAttuale" class="name-container">
+        <h2 class="warning" *ngIf="!this.gattoAttuale">Hai visitato tutti i profili</h2>
+        <hr color="yellow">
+        <h2 class="warning" *ngIf="this.gatti.length==0">Non ci sono altri profili skippati</h2>
+
+        <button class="rewatch-button" *ngIf="this.gatti.length!=0" class="rewatch-button"
+            (click)="rivediProfili()">Rivedi profili
+            skippati</button>
+        <hr color="yellow">
+
+    </div>
 </div>
