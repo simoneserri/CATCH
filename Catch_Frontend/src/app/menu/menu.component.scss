@@ -104,9 +104,9 @@ img{
     position:absolute;
     bottom: 5vh;
     left: 35vw;
-    background:none;
-    color:white;
-    border-color: white;
+    background:yellow;
+    color:black;
+    border-color: yellow;
     border-radius: clamp(16px, 2.5vw, 32px);
     font-size: clamp(16px, 2.5vw, 32px);
  }
@@ -115,9 +115,9 @@ img{
     position:absolute;
     bottom: 25vh;
     left: 35vw;
-    background:none;
-    color:white;
-    border-color: white;
+    background:yellow;
+    color:black;
+    border-color: yellow;
     border-radius: clamp(16px, 2.5vw, 32px);
     font-size: clamp(16px, 2.5vw, 32px);
   }
@@ -126,9 +126,9 @@ img{
     position:absolute;
     bottom: 15vh;
     left: 32vw;
-    background:none;
-    color:white;
-    border-color: white;
+    background:yellow;
+    color:black;
+    border-color: yellow;
     border-radius: clamp(16px, 2.5vw, 32px);
     font-size: clamp(16px, 2.5vw, 32px);
   }
@@ -137,7 +137,7 @@ img{
 
   .title{
     font-size: clamp(22px, 2.5vw, 34px);
-    color: white;
+    color: yellow;
     position:fixed;
     left:42%;
     top:4%;
