@@ -20,7 +20,7 @@ import { CookieService } from '../cookie-service.service';
 })
 export class MenuComponent implements OnInit,OnDestroy{
 
-  
+  showNotification = false;
   private sub!: Subscription;
   private pollingSub!: Subscription;
 
@@ -58,7 +58,7 @@ export class MenuComponent implements OnInit,OnDestroy{
       filter(stable => stable),
       take(1)
     ).subscribe(() => {
-      interval(8000).pipe(
+      interval(4000).pipe(
         takeUntil(this.destroy$),
         switchMap(() => this.servizioGatti.httpGetGatti().pipe(
           catchError(err => {
@@ -124,6 +124,16 @@ private caricaGatti() {
 }
 
 
+
+notificaUser() {
+  this.showNotification = true;
+
+  setTimeout(() => {
+    this.showNotification = false;
+  }, 3000);
+}
+
+
 private processaGatti(response: GattoFotoDTO[]) {
   if (typeof window !== 'undefined' && window.localStorage) {
     console.log('localStorage è disponibile');
@@ -141,11 +151,13 @@ private processaGatti(response: GattoFotoDTO[]) {
       if(cookieValue!==null){
         gatto.voto = cookieValue!;
       }
-
+      
       this.gattiRicevuti.set(gatto.id!.toString(), gatto);
       console.log("nuovo gatto: " + gatto.id);
       this.profiliSkippati=false;
       this.profiliTerminati=false;
+      this.notificaUser();
+      console.log("nuovo gatto");
     }
   });
 }

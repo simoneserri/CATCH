@@ -37,14 +37,34 @@ img{
     z-index: 1000;
   }
 
+.notification {
+  position: fixed;
+  top: -80px;              
+  left: 50%;              
+  transform: translateX(-50%);
+  background-color: yellow;
+  color: black;
+  padding: 1em 2em;
+  border-radius: 0 0 8px 8px; 
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  font-size: clamp(14px, 2vw, 18px); 
+  animation: slideDownUp 3s forwards;
+  z-index: 9999;
+}
+
+@keyframes slideDownUp {
+  0%   { top: -80px; opacity: 0; }
+  10%  { top: 20px; opacity: 1; }  
+  80%  { top: 20px; opacity: 1; }   
+  100% { top: -80px; opacity: 0; }  
+}
 .modal {
     background-color: yellow;
     padding: 2rem;
     border-radius: 10px;
     z-index: 1001; 
-    max-width: 55vw;
-    max-height: 80vh;
-    overflow: hidden;
+    max-width: 65vw;
+    max-height: 85vh;
     position: fixed;          
   top: 50%;                 
   left: 50%;              
@@ -58,8 +78,8 @@ img{
     border-radius: 10px;
     z-index: 1001; 
     max-width: 55vw;
-    max-height: 80vh;
-    overflow: hidden;
+    max-height: 85vh;
+    overflow: auto;
     position: fixed;          
   top: 50%;                 
   left: 50%;              
@@ -73,7 +93,7 @@ img{
     z-index: 1001; 
     max-width: 55vw;
     max-height: 80vh;
-    overflow: hidden;
+    overflow: auto;
     position: fixed;          
   top: 50%;                 
   left: 50%;              
@@ -103,7 +123,8 @@ img{
  .reset-button{
     position:absolute;
     bottom: 5vh;
-    left: 35vw;
+    left: 50%;
+    transform: translateX(-50%);
     background:yellow;
     color:black;
     border-color: yellow;
@@ -114,7 +135,8 @@ img{
   .search-button{
     position:absolute;
     bottom: 25vh;
-    left: 35vw;
+    left: 50%;
+    transform: translateX(-50%);
     background:yellow;
     color:black;
     border-color: yellow;
@@ -125,7 +147,8 @@ img{
   .newcat-button{
     position:absolute;
     bottom: 15vh;
-    left: 32vw;
+    left: 50%;
+    transform: translateX(-50%);
     background:yellow;
     color:black;
     border-color: yellow;
@@ -138,7 +161,8 @@ img{
   .title{
     font-size: clamp(22px, 2.5vw, 34px);
     color: yellow;
-    position:fixed;
-    left:42%;
-    top:4%;
+    left: 50%;
+    transform: translateX(-50%);
+    position:absolute;
+    top:3vh;
 }

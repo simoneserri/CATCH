@@ -3,6 +3,19 @@
      
 }
 
+.titolo{
+  text-align: center;
+  top:2vh;
+  font-size: clamp(10px, 3vw, 16px);
+  white-space: nowrap;
+}
+
+.titolo-sottosezione{
+  text-align: center;
+  top:10vh;
+}
+
+
     .add-button {
     all: unset;
     margin:3vw;
@@ -37,25 +50,43 @@
     position:relative  
   }
 
-  .submit-div{
-    position: absolute;
-    right: 1vw;
-    bottom: 1vh;
+  .container-sottosezione{
+     display: flex;
+  justify-content: center; 
+  align-items: center;    
+  width: 100%;            
   }
 
+  .submit-div{
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  width: 100%;
+  margin-top: 2vh;
+  }
 
+.input{
+  width: 50vw;
+  font-size: clamp(12px, 2.5vw, 18px);
+  padding: 0.5em;
+  border-radius: 8px;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+
+}
   .submit-button{
     background:none;
     color:black;
     border-color: black;
     border-radius: 25px;
-    font-size: clamp(16px, 6vw, 28px);;
+    font-size: clamp(16px, 6vw, 28px);
   }
 
   .foto-caricata{
     width: 10vw;
     height: 10vh;
   }
+
   .foto-container {
   height: 20vh;
     display: flex;
@@ -82,19 +113,19 @@
 
 .remove-icon {
 position: absolute;
-  top: 6px;
-  right: 6px;
-  background-color: rgba(255, 255, 255, 0.9);
+  top: 1px;
+  right: 1px;
+  background-color: none;
   border: none;
   border-radius: 50%;
-  width: 22px;
-  height: 22px;
-  font-size: 14px;
+  width: clamp(5px, 3vw, 22px);  
+  height: clamp(5px, 3vw, 22px);
+  font-size: 30px;
   cursor: url('/catCursor.png'), auto;
   line-height: 22px;
   text-align: center;
   padding: 0;
-  box-shadow: 0 0 2px rgba(0,0,0,0.3);
+  box-shadow: 0 0 2px none;
 }
 
 .upload-frame {

@@ -1,7 +1,8 @@
 <div class="newcatModal">
   <div *ngIf="!thankYouPage">
-    <h2>Aggiungi un nuovo aMicio!</h2>
-    <h4>Inserisci fino a 3 foto</h4>
+    <h2 class="titolo">Aggiungi un nuovo aMicio!</h2>
+    <div>
+    <h4 class="titolo-sottosezione">Inserisci fino a 3 foto</h4>
 
     <div class="foto-container">
 
@@ -36,17 +37,22 @@
 
       </ng-container>
     </div>
+    </div>
 
 
     <hr color="black">
     <div class="container">
-      <h4>Parlaci del tuo aMicio</h4>
-      <h5>Come si chiama?</h5>
-      <input type="text" [(ngModel)]="nomeGatto" name="nomeGatto" class='catname' size=10 placeholder="Nome.."
+      <h4 class="titolo-sottosezione">Parlaci del tuo aMicio</h4>
+      <h5 class="titolo-sottosezione">Come si chiama?</h5>
+      <div class="container-sottosezione">
+      <input class="input" type="text" [(ngModel)]="nomeGatto" name="nomeGatto" class='catname' placeholder="Nome.."
         maxlength="13" required />
-      <h5>Parlaci un po di lei</h5>
-      <textarea type="text" [(ngModel)]="bioGatto" name="bioGatto" class='catbio'
+        </div>
+      <h5 class="titolo-sottosezione">Parlaci un po di lei</h5>
+      <div class="container-sottosezione">
+      <textarea class="input" type="text" [(ngModel)]="bioGatto" name="bioGatto" class='catbio'
         placeholder="Breve bio.. (max 40 caratteri)" maxlength="40" required></Textarea>
+        </div>
       <div class="submit-div" *ngIf="fotoCaricate[0]&&nomeGatto!==''&&bioGatto!==''">
         <button class="submit-button" (click)="submitCat()">Invia!</button>
       </div>

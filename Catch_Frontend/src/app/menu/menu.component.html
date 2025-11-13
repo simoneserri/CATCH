@@ -1,6 +1,8 @@
 <div class="page-wrapper">
         <h1 class="title">Catch!<br></h1>
-        
+        <div *ngIf="showNotification" class="notification">
+                Sono stati trovati nuovi gatti nelle vicinanze!
+        </div>
         <div *ngIf="toShowCarouselModal" class="background" (click)="closeCarouselModal()"></div>
         <div *ngIf="toShowNewCatModal" class="background" (click)="closeNewCatModal()"></div>
         <div *ngIf="toShowResetMessage" class="background" (click)="closeResetMessage()"></div>

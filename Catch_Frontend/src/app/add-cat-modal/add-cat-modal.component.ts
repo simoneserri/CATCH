@@ -50,7 +50,8 @@ submitCat() {
       const reader = new FileReader();
       reader.onloadend = () => {
         const result = reader.result as string;
-        const base64 = result.replace(/^data:image\/[a-z]+;base64,/, '');
+        //const base64 = result.replace(/^data:image\/[a-z]+;base64,/, '');
+        const base64 = result.split(',')[1];
         resolve(base64);
       };
       reader.onerror = reject;
@@ -100,6 +101,13 @@ Promise.all(base64Promises)
     const file = input.files[0];
     this.blobCaricati.push(file);
     this.fotoCaricate.push(URL.createObjectURL(file));
+
+    const allowedExtensions = ['png', 'jpg', 'jpeg'];
+    const extension = file.name.split('.').pop()?.toLowerCase();
+    if (!extension || !allowedExtensions.includes(extension)) {
+      alert('Formato non ammesso. Carica solo PNG, JPG, JPEG');
+      return;
+    }
   }
 
 }
