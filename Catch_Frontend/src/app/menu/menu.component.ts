@@ -127,7 +127,7 @@ private caricaGatti() {
 
 notificaUser() {
   this.showNotification = true;
-
+  console.log("notifica all'user");
   setTimeout(() => {
     this.showNotification = false;
   }, 3000);

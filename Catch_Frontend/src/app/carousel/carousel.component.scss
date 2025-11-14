@@ -136,7 +136,49 @@ ul>li {
   box-sizing: border-box;
 }
 
+.carousel-indicator {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+  width: 100%;
+}
 
+.carousel-indicator ul {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem; /* spaziatura ridotta */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: nowrap; /* sempre su una riga */
+  width: 100%;
+}
+
+.carousel-indicator li {
+  flex: 1;              /* ogni indicatore si ridimensiona */
+  min-width: 0.4rem;    /* limite minimo molto piccolo */
+  max-width: 1.2rem;    /* limite massimo */
+}
+
+.carousel-indicator a {
+  display: block;
+  width: 100%;   
+  aspect-ratio: 1 / 1;  /* resta rotondo */
+  border-radius: 50%;
+  background-color: #ccc;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.carousel-navigation-button-selected {
+  background-color: black !important;
+  transform: scale(1.2);
+}
+
+.carousel-navigation-button {
+  background-color: #aaa;
+}
+
+/*
 .carousel-indicator {
   display: flex;
   justify-content: center;
@@ -150,7 +192,7 @@ ul>li {
   padding: 0;
   margin: 0;
 }
-
+*/
   
   .bottom-overlay-zone {
     position: absolute;

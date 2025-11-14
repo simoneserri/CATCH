@@ -99,15 +99,14 @@ Promise.all(base64Promises)
     const input = event.target as HTMLInputElement;
   if (input.files && input.files.length > 0) {
     const file = input.files[0];
-    this.blobCaricati.push(file);
-    this.fotoCaricate.push(URL.createObjectURL(file));
-
     const allowedExtensions = ['png', 'jpg', 'jpeg'];
     const extension = file.name.split('.').pop()?.toLowerCase();
     if (!extension || !allowedExtensions.includes(extension)) {
       alert('Formato non ammesso. Carica solo PNG, JPG, JPEG');
       return;
     }
+    this.blobCaricati.push(file);
+    this.fotoCaricate.push(URL.createObjectURL(file));
   }
 
 }
